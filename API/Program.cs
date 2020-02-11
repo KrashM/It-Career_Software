@@ -1,4 +1,4 @@
-﻿using System;
+﻿using API.Handlers;
 
 namespace API {
 
@@ -6,8 +6,7 @@ namespace API {
 
         static void Main() {
 
-            Handler database = new Handler();
-            database.Handle();
+            Handler hnd = new Handler();
 
         }
     }

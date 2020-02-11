@@ -1,24 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Hristo_10B\\Projects\\It-Career_Software\\API\\API.csproj": {}
+    "D:\\Programs\\Solutions\\My Projects\\It-Career_Software\\API\\API.csproj": {}
   },
   "projects": {
-    "D:\\Hristo_10B\\Projects\\It-Career_Software\\API\\API.csproj": {
+    "D:\\Programs\\Solutions\\My Projects\\It-Career_Software\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Hristo_10B\\Projects\\It-Career_Software\\API\\API.csproj",
+        "projectUniqueName": "D:\\Programs\\Solutions\\My Projects\\It-Career_Software\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "D:\\Hristo_10B\\Projects\\It-Career_Software\\API\\API.csproj",
-        "packagesPath": "C:\\Users\\Student KK1\\.nuget\\packages\\",
-        "outputPath": "D:\\Hristo_10B\\Projects\\It-Career_Software\\API\\obj\\",
+        "projectPath": "D:\\Programs\\Solutions\\My Projects\\It-Career_Software\\API\\API.csproj",
+        "packagesPath": "C:\\Users\\Krash\\.nuget\\packages\\",
+        "outputPath": "D:\\Programs\\Solutions\\My Projects\\It-Career_Software\\API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Student KK1\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Krash\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
