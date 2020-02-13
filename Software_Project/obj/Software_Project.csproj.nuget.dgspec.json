@@ -42,9 +42,13 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "System.Data.SqlClient": {
+            "MySQL.Data": {
               "target": "Package",
-              "version": "[4.8.0, )"
+              "version": "[8.0.19, )"
+            },
+            "System.Data.MySQLClient": {
+              "target": "Package",
+              "version": "(, )"
             }
           },
           "imports": [
