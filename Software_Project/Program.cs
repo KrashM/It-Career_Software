@@ -7,6 +7,7 @@ namespace Software_Project {
         static void Main() {
 
             Handler handler = new Handler();
+            handler.Close_Connection();
 
         }
 

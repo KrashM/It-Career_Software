@@ -1,9 +1,10 @@
 ﻿using MySql.Data.MySqlClient;
-using MySql.Data;
 
 namespace Software_Project.Handlers {
 
     class Handler {
+
+        private MySqlConnection conn = new MySqlConnection("Server=localhost;Uid=root;Pwd=root;");
 
         public Handler() {
 
@@ -11,20 +12,28 @@ namespace Software_Project.Handlers {
 
         }
 
-        private void Connect() {
+        public void Close_Connection(){
 
-            MySqlConnection conn = new MySqlConnection("Server=localhost;Database=main;Uid=root;Pwd=root;");
-            conn.Open();
-            System.Console.WriteLine("Connection Open!");
-            var stm = "use main;create table users(username varchar(50));insert into users values('Hristo'),('Pesho');";
-            var cmd = new MySqlCommand(stm, conn);
-            cmd.ExecuteScalar();
-            stm = "select * from users;";
-            cmd = new MySqlCommand(stm, conn);
-            var result = cmd.ExecuteScalar().ToString();
-            System.Console.WriteLine($"{result}");
             conn.Close();
 
         }
+
+        private void Connect() {
+
+            conn.Open();
+            MySqlCommand stm = new MySqlCommand("create database if not exists main; use main;", conn);
+            stm.ExecuteScalar();
+            Create_Tables();
+
+        }
+
+        private void Create_Tables(){
+
+            MySqlCommand cmd = new MySqlCommand("create table if not exists users(username varchar(50)); insert into users values('Hristo'),('Pesho');", conn);
+            cmd.ExecuteScalar();
+
+        }
+
     }
+
 }
