@@ -1,14 +1,23 @@
-using System;
 using System.Security.Cryptography;
+using System;
 
 namespace Software_Project.Hasher{
 
+    /// <summary>
+    /// This class is responsible for hashing passwords and verifying them.
+    /// </summary>
     public static class Password_Hasher {
 
+        //Constants for the hash and salt size.
         private const int SaltSize = 16;
-
         private const int HashSize = 20;
 
+        /// <summary>
+        /// Hashes the given password for n number of itterations and returns the hashed password.
+        /// </summary>
+        /// <param name="password"></param>
+        /// <param name="iterations"></param>
+        /// <returns>string</returns>
         public static string Hash(string password, int iterations) {
             
             byte[] salt;
@@ -27,10 +36,26 @@ namespace Software_Project.Hasher{
 
         }
 
+        /// <summary>
+        /// Hashes the given password for 220640 itterations and returns the hashed password.
+        /// </summary>
+        /// <param name="password"></param>
+        /// <returns>string</returns>
         public static string Hash(string password) { return Hash(password, 220640); }
         
+        /// <summary>
+        /// Checks if the hash is supported for this project.
+        /// </summary>
+        /// <param name="hashString"></param>
+        /// <returns>boolean</returns>
         public static bool IsHashSupported(string hashString) { return hashString.Contains("$KRASH$"); }
 
+        /// <summary>
+        /// Verifies if the password is valid and the hash is correct.
+        /// </summary>
+        /// <param name="password"></param>
+        /// <param name="hashedPassword"></param>
+        /// <returns>boolean</returns>
         public static bool Verify(string password, string hashedPassword) {
 
             if (!IsHashSupported(hashedPassword))
