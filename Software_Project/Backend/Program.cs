@@ -12,6 +12,7 @@ namespace Software_Project {
         /// This method returns a non static instance of the Program.
         /// </summary>
         /// <value>Program</value>
+        /// <returns>Instance of the static Program class.</returns>
         public static Program Instance { get { return instance; } }
 
         //Main method
@@ -33,10 +34,17 @@ namespace Software_Project {
                 var selection = Menu();
                 if(selection == 1)
                     Register();
-                if(selection == 2)
-                    LogIn();
-                if(selection == 0)
-                    break;
+                else
+                    if(selection == 2)
+                        LogIn();
+                    else
+                        if(selection == 3)
+                            Money(true);
+                        else
+                            if(selection == 4)
+                                Money(false);
+                            else
+                                break;
 
             }
 
@@ -48,9 +56,9 @@ namespace Software_Project {
         /// <returns>int</returns>
         private int Menu(){
 
-            System.Console.WriteLine("1.Register\n2.Log in\n3.Exit");
+            System.Console.WriteLine("1.Register\n2.Log in\n3.Deposit\n4.Withdraw\n5.Exit");
             var input = int.Parse(System.Console.ReadLine());
-            return (input == 1 || input == 2) ? input : 0;
+            return input;
 
         }
 
@@ -63,6 +71,12 @@ namespace Software_Project {
         /// Log in the user.
         /// </summary>
         private void LogIn(){ handler.LogIn_User(); }
+
+        /// <summary>
+        /// Change balance.
+        /// </summary>
+        /// <param name="flag">True=deposit/False=withdraw</param>
+        private void Money(bool flag=false){ handler.Money(flag); }
 
     }
 
