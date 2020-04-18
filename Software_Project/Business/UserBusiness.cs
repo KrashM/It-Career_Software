@@ -10,49 +10,32 @@ namespace Software_Project.Business{
         private Context context;
 
         public List<User> GetAllUsers(){
-            using(context = new Context()){
+            using (context = new Context()){
                 return context.Users.ToList();
             }
         }
 
         public void Register(User user){
-
             using (context = new Context()){
                 context.Users.Add(user);
                 context.SaveChanges();
             }
-
         }
 
-        public void Money(User user){
+        public void RemoveUser(User user){
+            using (context = new Context()){
+                User deleated = context.Users.Find(user);
+                if(deleated == null) return;
+                context.Users.Remove(deleated);
+                context.SaveChanges();
+            }
+        }
 
+        public void UpdateMoney(User user){
             using (context = new Context()){
                 context.Users.Update(user);
                 context.SaveChanges();
             }
-
-        }
-
-        public List<Product> GetAllProducts(){
-            using(context = new Context()){
-                return context.Products.ToList();
-            }
-        }
-
-        public Product GetProduct(int id){
-            return new Product();
-        }
-
-        public void Add(Product product){
-
-        }
-
-        public void Update(Product product){
-
-        }
-
-        public void Delete(int id){
-
         }
 
     }

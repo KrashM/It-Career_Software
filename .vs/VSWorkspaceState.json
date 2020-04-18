@@ -2,9 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Software_Project",
-    "\\Software_Project\\Backend",
-    "\\Software_Project\\Backend\\Presentation"
+    "\\Software_Project\\Business",
+    "\\Software_Project\\Presentation"
   ],
-  "SelectedNode": "\\Software_Project\\Backend\\Presentation\\Presentation.cs",
+  "SelectedNode": "\\Read.me",
   "PreviewInSolutionExplorer": false
 }
