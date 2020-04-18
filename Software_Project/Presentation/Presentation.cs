@@ -134,7 +134,7 @@ namespace Software_Project.Presentation{
             if(selection == 2)
                 user.Balance -= amount;
 
-            userBusiness.Money(user);
+            userBusiness.UpdateMoney(user);
 
         }
 
