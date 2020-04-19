@@ -9,39 +9,39 @@ namespace Software_Project.Business{
 
         private Context context;
 
-        public List<Product> GetAllProducts(){
+        public List<Product> GetAllProducts(int office_id){
             using (context = new Context()){
-                return context.Products.ToList();
+                return context.Offices.Find(office_id).ProductsAvailable.ToList();
             }
         }
 
-        public Product GetProduct(int id){
+        public Product GetProduct(int office_id, int id){
             using (context = new Context()){
-                return context.Products.Find(id);
+                return context.Offices.Find(office_id).ProductsAvailable.Find(x => x.Id == id);
             }
         }
 
-        public void AddProduct(Product product){
+        public void AddProduct(int office_id, Product product){
             using (context = new Context()){
-                context.Products.Add(product);
+                context.Offices.Find(office_id).ProductsAvailable.Add(product);
                 context.SaveChanges();
             }
         }
 
-        public void UpdateProduct(Product product){
+        public void UpdateProduct(int office_id, Product product){
             using (context = new Context()){
-                Product item = context.Products.Find(product.Id);
+                Product item = context.Offices.Find(office_id).ProductsAvailable.Find(x => x.Id == product.Id);
                 if(item == null) return;
                 context.Entry(item).CurrentValues.SetValues(product);
                 context.SaveChanges();
             }
         }
 
-        public void DeleteProduct(int id){
+        public void RemoveProduct(int office_id, int id){
             using (context = new Context()){
-                Product item = context.Products.Find(id);
+                Product item = context.Offices.Find(office_id).ProductsAvailable.Find(x => x.Id == id);
                 if(item == null) return;
-                context.Products.Remove(item);
+                context.Offices.Find(office_id).ProductsAvailable.Remove(item);
                 context.SaveChanges();
             }
         }
