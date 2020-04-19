@@ -1,4 +1,6 @@
-﻿namespace Software_Project.Data.Models{
+﻿using System.Collections.Generic;
+
+namespace Software_Project.Data.Models{
 
     public class User{
 
@@ -6,7 +8,7 @@
         public string Username { get; set; }
         public string Password { get; set; }
         public float Balance { get; set; } = 0;
-        //public List<Product> WishList { get; } = new List<Product>();
+        public Cart Cart { get; } = new Cart();
 
     }
 
