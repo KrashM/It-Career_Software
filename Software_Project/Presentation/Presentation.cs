@@ -134,7 +134,11 @@ namespace Software_Project.Presentation{
             if(selection == 2)
                 user.Balance -= amount;
 
+<<<<<<< HEAD
             userBusiness.UpdateMoney(user);
+=======
+            userBusiness.Money(user);
+>>>>>>> 5622059661db793a63adff5321c870a22254e804
 
         }
 

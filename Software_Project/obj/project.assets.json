@@ -1,6 +1,7 @@
 {
   "version": 3,
   "targets": {
+<<<<<<< HEAD
     ".NETCoreApp,Version=v3.1": {
       "Microsoft.CSharp/4.7.0": {
         "type": "package",
@@ -5635,29 +5636,37 @@
         "system.xml.xmlserializer.nuspec"
       ]
     }
+=======
+    ".NETCoreApp,Version=v3.1": {}
+>>>>>>> 5622059661db793a63adff5321c870a22254e804
   },
+  "libraries": {},
   "projectFileDependencyGroups": {
+<<<<<<< HEAD
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.EntityFrameworkCore >= 5.0.0-preview.2.20159.4",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.0-preview.2.20159.4",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.0-preview.2.20159.4",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.0-preview.2.20159.4"
     ]
+=======
+    ".NETCoreApp,Version=v3.1": []
+>>>>>>> 5622059661db793a63adff5321c870a22254e804
   },
   "packageFolders": {
-    "C:\\Users\\Krash\\.nuget\\packages\\": {}
+    "C:\\Users\\val\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programs\\Solutions\\My Projects\\It-Career_Software\\Software_Project\\Software_Project.csproj",
+      "projectUniqueName": "D:\\C#\\Softuni Shait\\Project\\New folder\\It-Career_Software\\Software_Project\\Software_Project.csproj",
       "projectName": "Software_Project",
-      "projectPath": "D:\\Programs\\Solutions\\My Projects\\It-Career_Software\\Software_Project\\Software_Project.csproj",
-      "packagesPath": "C:\\Users\\Krash\\.nuget\\packages\\",
-      "outputPath": "D:\\Programs\\Solutions\\My Projects\\It-Career_Software\\Software_Project\\obj\\",
+      "projectPath": "D:\\C#\\Softuni Shait\\Project\\New folder\\It-Career_Software\\Software_Project\\Software_Project.csproj",
+      "packagesPath": "C:\\Users\\val\\.nuget\\packages\\",
+      "outputPath": "D:\\C#\\Softuni Shait\\Project\\New folder\\It-Career_Software\\Software_Project\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Krash\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\val\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5680,6 +5689,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+<<<<<<< HEAD
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
@@ -5702,6 +5712,8 @@
             "version": "[5.0.0-preview.2.20159.4, )"
           }
         },
+=======
+>>>>>>> 5622059661db793a63adff5321c870a22254e804
         "imports": [
           "net461",
           "net462",
@@ -5712,12 +5724,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "frameworkReferences": {
-          "Microsoft.NETCore.App": {
-            "privateAssets": "all"
-          }
-        },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
