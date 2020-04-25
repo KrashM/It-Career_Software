@@ -1,0 +1,55 @@
+D:\Programs\Solutions\My Projects\New folder\Software_Project\bin\Debug\netcoreapp3.1\Software_Project.exe
+D:\Programs\Solutions\My Projects\New folder\Software_Project\obj\Debug\netcoreapp3.1\Software_Project.csprojAssemblyReference.cache
+D:\Programs\Solutions\My Projects\New folder\Software_Project\obj\Debug\netcoreapp3.1\Software_Project.AssemblyInfoInputs.cache
+D:\Programs\Solutions\My Projects\New folder\Software_Project\obj\Debug\netcoreapp3.1\Software_Project.AssemblyInfo.cs
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Software_Project.exe
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\obj\Debug\netcoreapp3.1\Software_Project.csprojAssemblyReference.cache
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\obj\Debug\netcoreapp3.1\Software_Project.AssemblyInfoInputs.cache
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\obj\Debug\netcoreapp3.1\Software_Project.AssemblyInfo.cs
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\obj\Debug\netcoreapp3.1\Software_Project.csproj.CoreCompileInputs.cache
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\obj\Debug\netcoreapp3.1\Software_Project.csproj.CopyComplete
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Software_Project.deps.json
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Software_Project.runtimeconfig.json
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Software_Project.runtimeconfig.dev.json
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Software_Project.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\bin\Debug\netcoreapp3.1\Software_Project.pdb
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\obj\Debug\netcoreapp3.1\Software_Project.dll
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\obj\Debug\netcoreapp3.1\Software_Project.pdb
+D:\Programs\Solutions\My Projects\It-Career_Software\Software_Project\obj\Debug\netcoreapp3.1\Software_Project.genruntimeconfig.cache
