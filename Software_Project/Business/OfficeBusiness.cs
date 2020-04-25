@@ -5,23 +5,65 @@ using System.Linq;
 
 namespace Software_Project.Business{
 
-    class OfficeBusiness{
+    static class OfficeBusiness{
 
-        private Context context;
+        private static Context context;
 
-        public List<Product> AllProductsAvailableInOffice(int office_id){
+        public static int GetID(string name){
             using (context = new Context()){
-                return context.Offices.Find(office_id).ProductsAvailable.ToList();
+                return context.Offices.ToList().Find(x => x.Name == name).Id;
             }
         }
 
-        public List<Distributor> DistributorsWhichLoadTheOffice(int office_id){
-            using (context = new Context()){
-                return context.Offices.Find(office_id).DistributorsLoadingTheOffice.ToList();
+        public static int GetStock(int officeID, int productID){
+            using (context = new Context()) {
+                return context.Office_Products.ToList().Find(x => (x.OfficeID == officeID) && (x.ProductID == productID)).Stock;
             }
         }
 
-        public List<Office> AllOfficesInACity(string city){
+        public static bool OfficeExists(string name){
+            using (context = new Context()){
+                return context.Offices.Any(x => x.Name == name); 
+            }
+        }
+
+        public static void CreateOffice(string name, string city, string address, string phone) { 
+            using (context = new Context()) {
+                Office office = new Office();
+                office.Name = name;
+                office.City = city;
+                office.Address = address;
+                office.Phone = phone;
+                context.Offices.Add(office);
+                context.SaveChanges();
+            }
+        }
+
+        public static bool CityExists(string city){
+            using (context = new Context()){
+                return context.Offices.Any(x => x.City == city);
+            }
+        }
+
+        public static bool ProductAvailable(int officeID, int productID){
+            using (context = new Context()){
+                return context.Office_Products.Any(x => (x.OfficeID == officeID) && (x.ProductID == productID));
+            }
+        }
+
+        public static List<Office> GetAllOffices(){
+            using (context = new Context()){
+                return context.Offices.ToList();
+            }
+        }
+
+        public static List<Product> AllProductsAvailableInOffice(int id){
+            using (context = new Context()){
+                return context.Products.ToList().FindAll(x => context.Office_Products.ToList().FindAll(x => x.OfficeID == id).Select(x => x.ProductID).Contains(x.Id));
+            }
+        }
+
+        public static List<Office> AllOfficesInACity(string city){
             using (context = new Context()){
                 List<Office> officesInThatCity = new List<Office>();
                 foreach(Office office in context.Offices)
@@ -31,18 +73,28 @@ namespace Software_Project.Business{
             }
         }
 
-        public void LoadProduct(int office_id, Product product){
+        public static void LoadProduct(int id, Product product, int stock){
             using  (context = new Context()){
-                context.Offices.Find(office_id).ProductsAvailable.Add(product);
+                Office_Product office_Product = new Office_Product();
+                office_Product.ProductID = product.Id;
+                office_Product.OfficeID = id;
+                office_Product.Stock = stock;
+                context.Office_Products.Add(office_Product);
                 context.SaveChanges();
             }
         }
 
-        public void ShipProduct(int office_id, int product_id){
+        public static void TransferProduct(int oldOfficeID, int newOfficeID, int productID){
             using (context = new Context()){
-                Product item = context.Offices.Find(office_id).ProductsAvailable.Find(x => x.Id == product_id);
-                if(item == null) return;
-                context.Offices.Find(office_id).ProductsAvailable.Remove(item);
+                context.Office_Products.ToList().Find(x => (x.OfficeID == oldOfficeID) && (x.ProductID == productID)).OfficeID = newOfficeID;
+                context.SaveChanges();
+            }
+        }
+
+        public static void ShipProduct(int id, int productID, int amount){
+            using (context = new Context()){
+                if(context.Office_Products.ToList().Find(x => (x.OfficeID == id) && (x.ProductID == productID)).Stock < amount) return;
+                context.Office_Products.ToList().Find(x => (x.OfficeID == id) && (x.ProductID == productID)).Stock -= amount;
                 context.SaveChanges();
             }
         }

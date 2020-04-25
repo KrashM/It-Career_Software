@@ -7,8 +7,7 @@ namespace Software_Project.Data.Models{
         public int Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public float Balance { get; set; } = 0;
-        public Cart Cart { get; } = new Cart();
+        public decimal Balance { get; set; }
 
     }
 

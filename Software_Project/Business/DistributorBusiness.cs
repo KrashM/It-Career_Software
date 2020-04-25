@@ -1,38 +1,78 @@
 using Software_Project.Data;
 using Software_Project.Data.Models;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Software_Project.Business{
 
-    class DistributorBusiness{
+    static class DistributorBusiness{
 
-        private Context context;
+        private static Context context;
 
-        public string GetInfo(int distributor_id){
+        public static int GetID(string name){
             using (context = new Context()){
-                return context.Distributors.Find(distributor_id).ToString();
+                return context.Distributors.ToList().Find(x => x.Name == name).Id;
             }
         }
 
-        public bool CheckForProduct(int distributor_id, int product_id){
+        public static bool DistributorExists(int id){
             using (context = new Context()){
-                Product item = context.Distributors.Find(distributor_id).Products.Find(x => x.Id == product_id);
-                if(item == null) return false;
-                return true;
+                return context.Distributors.ToList().Find(x => x.Id == id) == null ? false : true;
             }
         }
 
-        public void AddProduct(int distributor_id, Product product){
+        public static void CreateProduct(int distributorID, string productName, decimal price){
             using (context = new Context()){
-                context.Distributors.Find(distributor_id).Products.Add(product);
+                Product product = new Product();
+                product.Name = productName;
+                product.Price = price;
+                product.DistributorID = distributorID;
+                context.Products.Add(product);
                 context.SaveChanges();
             }
         }
 
-        public void RemoveProduct(int distributor_id, int product_id){
+        public static bool CheckForProduct(int distributorId, int productId){
             using (context = new Context()){
-                Product item = context.Distributors.Find(distributor_id).Products.Find(x => x.Id == product_id);
+                return context.Products.ToList().Any(x => (x.Id == productId) && (x.DistributorID == distributorId));
+            }
+        }
+
+        public static string GetInfo(int id){
+            using (context = new Context()){
+                return context.Distributors.ToList().Find(x => x.Id == id).ToString();
+            }
+        }
+
+        public static Product GetProduct(int distributorID, int id){
+            using (context = new Context()){
+                return context.Products.ToList().Find(x => (x.Id == id) && (x.DistributorID == distributorID));
+            }
+        }
+
+        public static List<Product> GetProducts(int distributorID){
+            using (context = new Context()){
+                return context.Products.ToList().FindAll(x => x.DistributorID == distributorID);
+            }
+        }
+
+        public static void CreateDistributor(string name, string address, string email, string phone){
+            using (context = new Context()) {
+                Distributor distributor = new Distributor();
+                distributor.Name = name;
+                distributor.Address = address;
+                distributor.Email = email;
+                distributor.Phone = phone;
+                context.Distributors.Add(distributor);
+                context.SaveChanges();
+            }
+        }
+
+        public static void RemoveProduct(int distributorID, int productID){
+            using (context = new Context()){
+                Product item = context.Products.ToList().Find(x => (x.Id == productID) && (x.DistributorID == distributorID));
                 if(item == null) return;
-                context.Distributors.Find(distributor_id).Products.Remove(item);
+                context.Products.Remove(item);
                 context.SaveChanges();
             }
         }

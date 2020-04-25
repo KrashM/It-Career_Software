@@ -5,35 +5,65 @@ using System.Linq;
 
 namespace Software_Project.Business{
 
-    class UserBusiness{
+    static class UserBusiness{
 
-        private Context context;
+        private static Context context;
 
-        public List<User> GetAllUsers(){
+        public static int GetID(string username){
+            using (context = new Context()){
+                return context.Users.ToList().Find(x => x.Username == username).Id;
+            }
+        }
+
+        public static List<User> GetAllUsers(){
             using (context = new Context()){
                 return context.Users.ToList();
             }
         }
 
-        public void Register(User user){
+        public static User GetUser(int userID){
             using (context = new Context()){
-                context.Users.Add(user);
+                return GetAllUsers().Find(x => x.Id == userID);
+            }
+        }
+
+        public static bool CheckForUser(int userID){
+            using (context = new Context()){
+                return context.Users.ToList().Any(x => x.Id == userID);
+            }
+        }
+
+        public static string GetUserPassword(int userID){
+            using (context = new Context()){
+                return context.Users.ToList().Find(x => x.Id == userID).Password;
+            }
+        }
+
+        public static void Register(string username, string password){
+            using (context = new Context()){
+                User newUser = new User();
+                newUser.Username = username;
+                newUser.Password = password;
+                newUser.Balance = 0;
+                context.Users.Add(newUser);
                 context.SaveChanges();
             }
         }
 
-        public void RemoveUser(User user){
+        public static void RemoveUser(int userID){
             using (context = new Context()){
-                User deleated = context.Users.Find(user);
+                User deleated = context.Users.ToList().Find(x => x.Id == userID);
                 if(deleated == null) return;
                 context.Users.Remove(deleated);
                 context.SaveChanges();
             }
         }
 
-        public void UpdateMoney(User user){
+        public static void UpdateMoney(int userID, decimal amount){
             using (context = new Context()){
-                context.Users.Update(user);
+                User testificate = context.Users.ToList().Find(x => x.Id == userID);
+                if (testificate == null) return;
+                testificate.Balance += amount;
                 context.SaveChanges();
             }
         }
