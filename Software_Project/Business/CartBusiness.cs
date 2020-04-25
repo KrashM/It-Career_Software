@@ -1,44 +1,43 @@
 using Software_Project.Data;
 using Software_Project.Data.Models;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace Software_Project.Business{
 
-    class CartBusiness{
+    static class CartBusiness{
 
-        private Context context;
+        private static Context context;
 
-        public void AddItem(Product product){
+        public static string ListAllItemsInCart(int userID){
             using (context = new Context()){
-                context.Products.Add(product);
+                return string.Join('\n', context.Cart_Products.ToList().FindAll(x => x.UserID == userID));
             }
         }
 
-        public void RemoveItem(Product product){
+        public static void AddItem(int userID, int productID, int amount){
             using (context = new Context()){
-                Product item = context.Products.Find(product);
-                if(item == null) return;
-                context.Products.Remove(item);
+                Cart_Products cart_Products = new Cart_Products();
+                cart_Products.UserID = userID;
+                cart_Products.ProductID = productID;
+                cart_Products.Amount = amount;
+                context.Cart_Products.Add(cart_Products);
                 context.SaveChanges();
             }
         }
 
-        public List<Product> ListAllItemsInCart(){
+        public static void RemoveItem(int userID, int productID){
             using (context = new Context()){
-                return context.Products.ToList();
+                Cart_Products item = context.Cart_Products.ToList().Find(x => (x.UserID == userID) && (x.ProductID == productID));
+                if(item == null) return;
+                context.Cart_Products.Remove(item);
+                context.SaveChanges();
             }
         }
 
-        public decimal SumOfPrices(){
+        public static decimal GetTotalPrice(int userID){
             using (context = new Context()){
-                decimal sum = 0;
-                List<Product> items = context.Products.ToList();
-                foreach(Product item in items)
-                    sum += item.Price;
-                return sum;
+                return context.Cart_Products.ToList().FindAll(x => x.UserID == userID).Select(x => x.Amount * ProductBusiness.GetProduct(x.ProductID).Price).Sum();
             }
-            
         }
 
     }
