@@ -18,7 +18,7 @@ namespace Software_Project.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Software_Project.Data.Models.Cart_Products", b =>
+            modelBuilder.Entity("Software_Project.Data.Models.Cart", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -36,7 +36,7 @@ namespace Software_Project.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Cart_Products");
+                    b.ToTable("Carts");
                 });
 
             modelBuilder.Entity("Software_Project.Data.Models.Distributor", b =>

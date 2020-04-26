@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Software_Project.Data.Models{
+﻿namespace Software_Project.Data.Models{
 
     public class User{
 

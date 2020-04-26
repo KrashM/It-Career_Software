@@ -2,12 +2,12 @@
 
 namespace Software_Project.Migrations
 {
-    public partial class finalDebug : Migration
+    public partial class Debug : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Cart_Products",
+                name: "Carts",
                 columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
@@ -18,7 +18,7 @@ namespace Software_Project.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Cart_Products", x => x.ID);
+                    table.PrimaryKey("PK_Carts", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -102,7 +102,7 @@ namespace Software_Project.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Cart_Products");
+                name: "Carts");
 
             migrationBuilder.DropTable(
                 name: "Distributors");

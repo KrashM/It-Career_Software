@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Software_Project.Data.Models.Cart" Collapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Models\Cart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Software_Project.Data.Models.Cart_Products" Collapsed="true">
+    <Position X="12" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAgAAAAAAAAAiAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Models\Cart_Products.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Software_Project.Data.Models.Distributor" Collapsed="true">
+    <Position X="12" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAAAAEAAAAAAQAAAAAAAACAAAAIAAAAAA=</HashCode>
+      <FileName>Data\Models\Distributor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Software_Project.Data.Models.Office" Collapsed="true">
+    <Position X="12" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAIAAAAAAQAAAAAAAACAAAAIAAAAAA=</HashCode>
+      <FileName>Data\Models\Office.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Software_Project.Data.Models.Office_Product" Collapsed="true">
+    <Position X="12" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAgAAAAAAAQAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Models\Office_Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Software_Project.Data.Models.Product" Collapsed="true">
+    <Position X="12" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAAAAAEAAAAAAQAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Data\Models\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Software_Project.Data.Models.User" Collapsed="true">
+    <Position X="12" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAQgAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Models\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
