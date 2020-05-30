@@ -10,6 +10,9 @@ namespace Software_Project.Presentation{
             Menu();
         }
 
+        /// <summary>
+        /// Functionality of the menu.
+        /// </summary>
         private void Menu(){
 
             PrintMenu();
@@ -59,6 +62,9 @@ namespace Software_Project.Presentation{
 
         }
 
+        /// <summary>
+        /// Prints the menu.
+        /// </summary>
         private void PrintMenu(){
 
             Console.WriteLine(new string('-', 41));
@@ -74,6 +80,9 @@ namespace Software_Project.Presentation{
 
         }
 
+        /// <summary>
+        /// Requests a new office to be created.
+        /// </summary>
         private void CreateOffice() {
 
             string name, city, address, phone;
@@ -144,6 +153,9 @@ namespace Software_Project.Presentation{
 
         }
 
+        /// <summary>
+        /// Requests the information of all the offices.
+        /// </summary>
         private void ViewAllOffices(){
 
             foreach(Office office in OfficeBusiness.GetAllOffices()) Console.WriteLine($"{office.Name} - {office.City}");
@@ -151,6 +163,9 @@ namespace Software_Project.Presentation{
 
         }
 
+        /// <summary>
+        /// Requests the information of all the offices in a given city.
+        /// </summary>
         private void ViewAllOfficesInCity(){
 
             Console.Clear();
@@ -181,6 +196,9 @@ namespace Software_Project.Presentation{
 
         }
 
+        /// <summary>
+        /// Requests all products available in the office and prints them.
+        /// </summary>
         private void ViewAllProducts(){
 
             Console.Clear();
@@ -205,13 +223,15 @@ namespace Software_Project.Presentation{
 
             }
 
-            foreach (Product product in OfficeBusiness.AllProductsAvailableInOffice(OfficeBusiness.GetID(name)))
-                Console.WriteLine(product.ToString() + "\nStock: " + OfficeBusiness.GetStock(OfficeBusiness.GetID(name), product.Id));
+            Console.WriteLine(OfficeBusiness.AllProductsAvailableInOffice(OfficeBusiness.GetID(name)));
 
             Console.ReadKey();
             
         }
 
+        /// <summary>
+        /// Request a product to be loaded to an office.
+        /// </summary>
         private void LoadProduct(){
 
             string officeName, distributorName, productName;
@@ -283,6 +303,9 @@ namespace Software_Project.Presentation{
 
         }
 
+        /// <summary>
+        /// Request a shipping from one office to another.
+        /// </summary>
         private void ShipProduct(){
             
             string officeNameFrom, officeNameTo, productName;

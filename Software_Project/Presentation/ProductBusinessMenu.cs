@@ -10,42 +10,21 @@ namespace Software_Project.Presentation{
             Menu();
         }
 
+        /// <summary>
+        /// Functionality of the menu.
+        /// </summary>
         private void Menu(){
 
             PrintMenu();
+            int input;
 
             while (true) {
 
                 Console.Write("Input: ");
-                int input = int.Parse(Console.ReadLine());
+                input = int.Parse(Console.ReadLine());
                 Console.WriteLine();
 
-                if(!(input < 1 || input > 6)){
-
-                    switch (input) {
-
-                        case 1:
-                            ViewAllProducts();
-                            return;
-
-                        case 2:
-                            ViewSpecificProduct();
-                            return;
-
-                        case 3:
-                            UpdateProduct();
-                            return;
-
-                        case 4:
-                            RemoveProduct();
-                            return;
-
-                        case 5:
-                            return;
-
-                    }
-
-                }
+                if(!(input < 1 || input > 6)) break;
 
                 Console.WriteLine(new string('-', 28));
                 Console.WriteLine("Please enter a valid number!");
@@ -53,8 +32,34 @@ namespace Software_Project.Presentation{
 
             }
 
+            switch (input) {
+
+                case 1:
+                    ViewAllProducts();
+                    break;
+
+                case 2:
+                    ViewSpecificProduct();
+                    break;
+
+                case 3:
+                    UpdateProduct();
+                    break;
+
+                case 4:
+                    RemoveProduct();
+                    break;
+
+                case 5:
+                    break;
+
+            }
+
         }
 
+        /// <summary>
+        /// Prints the menu.
+        /// </summary>
         private void PrintMenu(){
 
             Console.WriteLine(new string('-', 40));
@@ -69,6 +74,9 @@ namespace Software_Project.Presentation{
 
         }
 
+        /// <summary>
+        /// Requests a list of all the products in the system and prints them.
+        /// </summary>
         private void ViewAllProducts(){
 
             Console.Clear();
@@ -83,6 +91,9 @@ namespace Software_Project.Presentation{
 
         }
 
+        /// <summary>
+        /// Requests the info of a specific product and prints it.
+        /// </summary>
         private void ViewSpecificProduct() {
 
             Console.Clear();
@@ -101,6 +112,9 @@ namespace Software_Project.Presentation{
 
         }
 
+        /// <summary>
+        /// Functionality of the submenu for the update.
+        /// </summary>
         private void UpdateProduct(){
 
             Console.Clear();
@@ -149,6 +163,9 @@ namespace Software_Project.Presentation{
 
         }
 
+        /// <summary>
+        /// Prints the update menu for a product.
+        /// </summary>
         private void PrintUpdateProduct(){
 
             Console.WriteLine("Update: \n");
@@ -158,6 +175,10 @@ namespace Software_Project.Presentation{
 
         }
 
+        /// <summary>
+        /// Request for the name of a product to be updated.
+        /// </summary>
+        /// <param name="name"></param>
         private void UpdateName(string name){
 
             while (true){
@@ -183,6 +204,10 @@ namespace Software_Project.Presentation{
 
         }
 
+        /// <summary>
+        /// Request for the price of a product to be updated.
+        /// </summary>
+        /// <param name="name"></param>
         private void UpdatePrice(string name){
 
             while(true){
@@ -206,6 +231,10 @@ namespace Software_Project.Presentation{
 
         }
 
+        /// <summary>
+        /// Requests to update the information of a product.
+        /// </summary>
+        /// <param name="name"></param>
         private void UpdateAllFields(string name){
 
             string newName;
@@ -267,6 +296,9 @@ namespace Software_Project.Presentation{
 
         }
 
+        /// <summary>
+        /// Requests a product to be removed.
+        /// </summary>
         private void RemoveProduct() {
 
             Console.Clear();

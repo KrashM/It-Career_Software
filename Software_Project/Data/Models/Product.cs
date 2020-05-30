@@ -7,10 +7,6 @@ namespace Software_Project.Data.Models{
         public decimal Price { get; set; }
         public int DistributorID { get; set; }
 
-        public override string ToString(){
-            return $"Name: {Name}\nCosts: {Price}";
-        }
-      
     }
 
 }

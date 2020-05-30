@@ -12,33 +12,45 @@ namespace Software_Project.Presentation{
             Input();
         }
 
+        /// <summary>
+        /// Selection to either register or log in.
+        /// </summary>
         private void Register_LogIn(){
 
-            int selection;
+            bool loged_in = false;
 
-            while(true){
+            while(!loged_in){
 
-                RegLogMenu();
-                selection = int.Parse(Console.ReadLine());
-                Console.Clear();
+                int selection;
 
-                if(!(selection < 1 || selection > 2)) break;
+                while(true){
 
-            }
+                    RegLogMenu();
+                    selection = int.Parse(Console.ReadLine());
+                    Console.Clear();
 
-            switch(selection){
+                    if(!(selection < 1 || selection > 2)) break;
 
-                    case 1:
-                        Register();
-                        break;
-                    case 2:
-                        LogIn();
-                        break;
+                }
+
+                switch(selection){
+
+                        case 1:
+                            Register();
+                            break;
+                        case 2:
+                            if(LogIn()) loged_in = true;
+                            break;
+
+                }
 
             }
 
         }
 
+        /// <summary>
+        /// Prints the menu.
+        /// </summary>
         private void RegLogMenu(){
 
             Console.WriteLine(new string('-', 40));
@@ -49,6 +61,9 @@ namespace Software_Project.Presentation{
 
         }
 
+        /// <summary>
+        /// Requests a register of a new user.
+        /// </summary>
         private void Register(){
 
             Console.Write("Username: ");
@@ -63,18 +78,23 @@ namespace Software_Project.Presentation{
 
         }
 
-        private void LogIn(){
+        /// <summary>
+        /// Requests a log in for the user.
+        /// </summary>
+        private bool LogIn(){
 
-            //CAN LOG IN WITH ANY PASSWORD OR WITHOUT ONE
             Console.Write("Username: ");
             username = Console.ReadLine();
             Console.Write("Password: ");
             string password = Console.ReadLine();
-            if (Password_Hasher.Verify(password, UserBusiness.GetUser(UserBusiness.GetID(username)).Password)) return;
-            Console.WriteLine("Logged In!");
+            if (Password_Hasher.Verify(password, UserBusiness.GetUser(UserBusiness.GetID(username)).Password)) return true;
+            return false;
 
         }
 
+        /// <summary>
+        /// Functionality of the main menu.
+        /// </summary>
         private void Input(){
 
             int selection;
@@ -112,6 +132,9 @@ namespace Software_Project.Presentation{
 
         }
 
+        /// <summary>
+        /// Prints the main menu.
+        /// </summary>
         private void Menu(){
 
             Console.WriteLine(new string('-', 40));

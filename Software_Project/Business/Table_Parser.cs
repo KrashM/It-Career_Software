@@ -6,14 +6,35 @@ using System.Diagnostics;
 using System.Linq.Expressions;
 using System.Collections.Generic;
 
-namespace Software_Project.Presentation{
+namespace Software_Project.Business{
 
     public static class Table_Parser{
-        public static string ToStringTable<T>(this IEnumerable<T> values, string[] columnHeaders, params Func<T, object>[] valueSelectors){
-            return ToStringTable(values.ToArray(), columnHeaders, valueSelectors);
+
+        /// <summary>
+        /// Starts the proces of generating the table with the specified parameters.
+        /// </summary>
+        /// <param name="values"></param>
+        /// <param name="type"></param>
+        /// <param name="columnHeaders"></param>
+        /// <param name="Func<T"></param>
+        /// <param name="valueSelectors"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>The table.</returns>
+        public static string ToStringTable<T>(this IEnumerable<T> values, bool type, string[] columnHeaders, params Func<T, object>[] valueSelectors){
+            return ToStringTable(values.ToArray(), type, columnHeaders, valueSelectors);
         }
 
-        public static string ToStringTable<T>(this T[] values, string[] columnHeaders, params Func<T, object>[] valueSelectors){
+        /// <summary>
+        /// Creates the headers of the table and fills the rows.
+        /// </summary>
+        /// <param name="values"></param>
+        /// <param name="type"></param>
+        /// <param name="columnHeaders"></param>
+        /// <param name="Func<T"></param>
+        /// <param name="valueSelectors"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>The finished table.</returns>
+        public static string ToStringTable<T>(this T[] values, bool type, string[] columnHeaders, params Func<T, object>[] valueSelectors){
 
             Debug.Assert(columnHeaders.Length == valueSelectors.Length);
 
@@ -32,11 +53,18 @@ namespace Software_Project.Presentation{
 
                 }
 
-            return ToStringTable(arrValues);
+            return ToStringTable(arrValues, type);
 
         }
 
-        public static string ToStringTable(this string[,] arrValues){
+        /// <summary>
+        /// Generates the rows of the table.
+        /// </summary>
+        /// <param name="string["></param>
+        /// <param name="arrValues"></param>
+        /// <param name="type"></param>
+        /// <returns>The rows.</returns>
+        public static string ToStringTable(this string[,] arrValues, bool type){
 
             int[] maxColumnsWidth = GetMaxColumnsWidth(arrValues);
             var headerSpliter = new string('-', maxColumnsWidth.Sum(i => i + 3) - 1);
@@ -48,7 +76,7 @@ namespace Software_Project.Presentation{
 
                     // Print cell
                     string cell = arrValues[rowIndex, colIndex];
-                    cell = cell.PadRight(maxColumnsWidth[colIndex]);
+                    cell = (colIndex > 1 && type) ? cell.PadLeft(maxColumnsWidth[colIndex]) : cell.PadRight(maxColumnsWidth[colIndex]);
                     sb.Append(" | ");
                     sb.Append(cell);
 
@@ -65,6 +93,13 @@ namespace Software_Project.Presentation{
                     sb.AppendLine();
 
                 }
+                // Print splitter
+                if (rowIndex == arrValues.GetLength(0) - 2 && type){
+
+                    sb.AppendFormat(" |{0}| ", headerSpliter);
+                    sb.AppendLine();
+
+                }
 
             }
 
@@ -72,8 +107,13 @@ namespace Software_Project.Presentation{
 
         }
 
-        private static int[] GetMaxColumnsWidth(string[,] arrValues)
-        {
+        /// <summary>
+        /// Gets the width of the longest element in every column.
+        /// </summary>
+        /// <param name="arrValues"></param>
+        /// <returns>Array of all the widths.</returns>
+        private static int[] GetMaxColumnsWidth(string[,] arrValues){
+            
             var maxColumnsWidth = new int[arrValues.GetLength(1)];
             for (int colIndex = 0; colIndex < arrValues.GetLength(1); colIndex++)
                 for (int rowIndex = 0; rowIndex < arrValues.GetLength(0); rowIndex++){
@@ -86,27 +126,6 @@ namespace Software_Project.Presentation{
                 }
 
             return maxColumnsWidth;
-
-        }
-
-        public static string ToStringTable<T>(this IEnumerable<T> values, params Expression<Func<T, object>>[] valueSelectors){
-
-            var headers = valueSelectors.Select(func => GetProperty(func).Name).ToArray();
-            var selectors = valueSelectors.Select(exp => exp.Compile()).ToArray();
-
-            return ToStringTable(values, headers, selectors);
-
-        }
-
-        private static PropertyInfo GetProperty<T>(Expression<Func<T, object>> expresstion){
-
-            if (expresstion.Body is UnaryExpression)
-                if ((expresstion.Body as UnaryExpression).Operand is MemberExpression)
-                    return ((expresstion.Body as UnaryExpression).Operand as MemberExpression).Member as PropertyInfo;
-
-            if ((expresstion.Body is MemberExpression)) return (expresstion.Body as MemberExpression).Member as PropertyInfo;
-            
-            return null;
 
         }
         

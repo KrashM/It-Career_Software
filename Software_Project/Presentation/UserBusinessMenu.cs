@@ -9,11 +9,18 @@ namespace Software_Project.Presentation{
 
         private string username;
 
+        /// <summary>
+        /// Contsructor. Saves the username of the loged user.
+        /// </summary>
+        /// <param name="username"></param>
         public UserBusinessMenu(string username){
             this.username = username;
             Menu();
         }
 
+        /// <summary>
+        /// Functionality of the menu.
+        /// </summary>
         private void Menu(){
 
             PrintMenu();
@@ -52,6 +59,9 @@ namespace Software_Project.Presentation{
 
         }
 
+        /// <summary>
+        /// Prints the menu.
+        /// </summary>
         private void PrintMenu(){
 
             Console.WriteLine(new string('-', 41));
@@ -65,57 +75,9 @@ namespace Software_Project.Presentation{
 
         }
 
-        private void RegisterUser(){
-
-
-            Console.Clear();
-
-            Console.WriteLine("*** User's username has to be at least 4 characters long!\n");
-
-            Console.WriteLine("*** User's password has to be at least 8 characters long");
-            Console.WriteLine("    and it has to contain at least one upper case letter, lower case letter and a number!\n");
-
-            Console.WriteLine(new string('-', 41));
-            Console.WriteLine(new string(' ', 12) + "USER REGISTRATION");
-            Console.WriteLine(new string('-', 41) + '\n');
-
-            while (true){
-
-                Console.Write("Username: ");
-                username = Console.ReadLine();
-                Console.WriteLine();
-
-                if(username.Length >= 4 && !UserBusiness.CheckForUser(UserBusiness.GetID(username))) break;
-
-                Console.WriteLine("The username you have entered does not meet the requirements or has already been taken!");
-                Console.WriteLine("Please enter a new one!\n");
-
-
-            }
-
-            while(true){
-
-                Console.Write("Password: ");
-                string password = Console.ReadLine();
-                Console.WriteLine();
-                
-                if(password.Length >= 8 || password.Any(Char.IsUpper) || password.Any(Char.IsLower) || password.Any(Char.IsDigit)){
-                    
-                    string hashed_password = Password_Hasher.Hash(password);
-                    Password_Hasher.Verify(password, hashed_password);
-
-                    UserBusiness.Register(username, hashed_password);
-                    return;
-
-                }
-
-                Console.WriteLine("The password you have entered does not meet the requirements!");
-                Console.WriteLine("Please enter a new one!\n");
-
-            }
-            
-        }
-
+        /// <summary>
+        /// Requests a user to be removed.
+        /// </summary>
         private void RemoveUser(){
 
             Console.Clear();
@@ -143,6 +105,9 @@ namespace Software_Project.Presentation{
 
         }
 
+        /// <summary>
+        /// Requests a change in the balance of the user.
+        /// </summary>
         private void ManageBalance(){
 
             Console.Clear();
@@ -188,6 +153,9 @@ namespace Software_Project.Presentation{
 
         }
 
+        /// <summary>
+        /// Requests a deposit to the balance.
+        /// </summary>
         private void ManageBalance_Deposit(){
 
             Console.Clear();
@@ -220,6 +188,9 @@ namespace Software_Project.Presentation{
 
         }
 
+        /// <summary>
+        /// Requests a withdraw from the balance.
+        /// </summary>
         private void ManageBalance_Withdraw(){
 
             Console.Clear();

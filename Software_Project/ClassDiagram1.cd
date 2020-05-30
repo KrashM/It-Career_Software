@@ -1,53 +1,170 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Software_Project.Data.Models.Cart" Collapsed="true">
-    <Position X="12" Y="1.5" Width="1.5" />
+    <Position X="6.75" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>EAAAAAAAAAAAgAAAAAAAAAiAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Data\Models\Cart.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Software_Project.Data.Models.Cart_Products" Collapsed="true">
-    <Position X="12" Y="2.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>EAAAAAAAAAAAgAAAAAAAAAiAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Data\Models\Cart_Products.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Software_Project.Data.Models.Distributor" Collapsed="true">
-    <Position X="12" Y="3" Width="1.5" />
+    <Position X="4.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAACAAAAAEAAAAAAQAAAAAAAACAAAAIAAAAAA=</HashCode>
+      <HashCode>AAACAAAAACAAAAAAAAAAAAQAAAAAAAACAAAAIAAAAAA=</HashCode>
       <FileName>Data\Models\Distributor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Software_Project.Data.Models.Office" Collapsed="true">
-    <Position X="12" Y="3.75" Width="1.5" />
+    <Position X="9" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAIAAAAAAQAAAAAAAACAAAAIAAAAAA=</HashCode>
       <FileName>Data\Models\Office.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Software_Project.Data.Models.Office_Product" Collapsed="true">
-    <Position X="12" Y="4.5" Width="1.5" />
+    <Position X="13" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAAAAAAAAgAAAAAAAQAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Data\Models\Office_Product.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Software_Project.Data.Models.Product" Collapsed="true">
-    <Position X="12" Y="5.25" Width="1.5" />
+    <Position X="11" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAQAAAAAEAAAAAAQAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <HashCode>AAACAAAAAQAAAAAAAAAAAAQAAAAAAAAAAAAAAgAAAAA=</HashCode>
       <FileName>Data\Models\Product.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Software_Project.Data.Models.User" Collapsed="true">
-    <Position X="12" Y="6" Width="1.5" />
+    <Position X="2.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAQgAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>Data\Models\User.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="Software_Project.Data.Context" Collapsed="true">
+    <Position X="6.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAQAAAAAAAAgACAAAAQAAAAAAAAAAAAAAAQQ=</HashCode>
+      <FileName>Data\Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Software_Project.Business.UserBusiness" Collapsed="true">
+    <Position X="2.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAECAAAAAAAAAAAAAAAAgAAAAAABAAAAEAAEAAEAEAA=</HashCode>
+      <FileName>Business\UserBusiness.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="context" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Software_Project.Business.Table_Parser" Collapsed="true">
+    <Position X="6.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\Table_Parser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Software_Project.Business.ProductBusiness" Collapsed="true">
+    <Position X="11" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAIAAIwCCAAAAAAAAAAAABCAAAAAQ=</HashCode>
+      <FileName>Business\ProductBusiness.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="context" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Software_Project.Business.OfficeBusiness" Collapsed="true">
+    <Position X="9" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgACAACAAAAAACAAAAAIgAAACCICCAABAAAAAAAAAAA=</HashCode>
+      <FileName>Business\OfficeBusiness.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="context" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Software_Project.Business.DistributorBusiness" Collapsed="true">
+    <Position X="4.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACAAAAAAAAAAAAAAAIgCgAAAAAAEAAQAAACAAAIAA=</HashCode>
+      <FileName>Business\DistributorBusiness.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="context" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Software_Project.Business.CartBusiness" Collapsed="true">
+    <Position X="6.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAgAAAAAAMAAAAAAAAAAA=</HashCode>
+      <FileName>Business\CartBusiness.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="context" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Software_Project.Presentation.CartBusinessMenu" Collapsed="true">
+    <Position X="6.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAgIAIAAAMAAAAAAAAAAA=</HashCode>
+      <FileName>Presentation\CartBusinessMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Software_Project.Presentation.DistributorBusinessMenu" Collapsed="true">
+    <Position X="4.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAIAAAAEIAIAEAAAAAAAAAAIAA=</HashCode>
+      <FileName>Presentation\DistributorBusinessMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Software_Project.Presentation.OfficeBusinessMenu" Collapsed="true">
+    <Position X="9" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAIAKCAAgAAAAACAAAAA=</HashCode>
+      <FileName>Presentation\OfficeBusinessMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Software_Project.Business.Password_Hasher" Collapsed="true">
+    <Position X="2.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABIAAQAAgAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Presentation\Password_Hasher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Software_Project.Presentation.Display" Collapsed="true">
+    <Position X="14.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAAAAAEAEAAJCBAAAAAAAAAAAAA=</HashCode>
+      <FileName>Presentation\Presentation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Software_Project.Presentation.ProductBusinessMenu" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAQAAAAAAAAAAAAgAIAACAAIAIAAAAAAABACAAAAQ=</HashCode>
+      <FileName>Presentation\ProductBusinessMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Software_Project.Presentation.UserBusinessMenu" Collapsed="true">
+    <Position X="2.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAkAAAAIAAAAAABAAAAAAAEAAIAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Presentation\UserBusinessMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Software_Project.Program" Collapsed="true">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

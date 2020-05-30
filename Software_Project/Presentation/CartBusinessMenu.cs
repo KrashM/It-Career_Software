@@ -7,48 +7,30 @@ namespace Software_Project.Presentation{
 
         private string username;
 
+        /// <summary>
+        /// Constructor. Sets the username to the curent user who is loged in.
+        /// </summary>
+        /// <param name="username"></param>
         public CartBusinessMenu(string username){
             this.username = username;
             Menu();
         }
 
+        /// <summary>
+        /// Functionality of the menu.
+        /// </summary>
         private void Menu(){
 
             PrintMenu();
+            int input;
 
             while (true){
                 
                 Console.Write("Input: ");
-                int input = int.Parse(Console.ReadLine());
+                input = int.Parse(Console.ReadLine());
                 Console.WriteLine();
 
-                if(input > 0 || input < 6){
-
-                    switch (input){
-
-                        case 1:
-                            ListAllItemsInCart();
-                            
-                            return;
-
-                        case 2:
-                            AddItem();
-                            return;
-
-                        case 3:
-                            RemoveItem();
-                            return;
-
-                        case 4:
-                            GetPriceTotal();
-                            return;
-
-                        case 5:
-                            return;
-
-                    }
-
-                }
+                if(input > 0 || input < 5) break;
 
                 Console.WriteLine(new string('-', 28));
                 Console.WriteLine("Please enter a valid number!");
@@ -57,8 +39,32 @@ namespace Software_Project.Presentation{
 
             }
 
+            
+
+            switch (input){
+
+                case 1:
+                    ListAllItemsInCart();
+                    break;
+
+                case 2:
+                    AddItem();
+                    break;
+
+                case 3:
+                    RemoveItem();
+                    break;
+
+                case 4:
+                    break;
+
+            }
+
         }
 
+        /// <summary>
+        /// Printing the menu.
+        /// </summary>
         private void PrintMenu(){
 
             Console.WriteLine(new string('-', 40));
@@ -69,17 +75,19 @@ namespace Software_Project.Presentation{
             Console.WriteLine("1. List all items in cart");
             Console.WriteLine("2. Add item");
             Console.WriteLine("3. Remove item");
-            Console.WriteLine("4. Get price total");
-            Console.WriteLine("5. Exit\n");
+            Console.WriteLine("4. Exit\n");
 
         }
 
+        /// <summary>
+        /// Request a list of all the products in the cart and prints them.
+        /// </summary>
         private void ListAllItemsInCart(){
 
             Console.Clear();
 
             Console.WriteLine(new string('-', 41));
-            Console.WriteLine(new string(' ', 13) + "LIST ALL ITEMS");
+            Console.WriteLine(new string(' ', 13) + "GET PRICE TOTAL");
             Console.WriteLine(new string('-', 41) + '\n');
 
             Console.WriteLine(CartBusiness.ListAllItemsInCart(UserBusiness.GetID(username)) + '\n');
@@ -87,7 +95,12 @@ namespace Software_Project.Presentation{
 
         }
 
+        /// <summary>
+        /// Prints all available products in the system and makes the user chose which one he wants to add to his cart. 
+        /// </summary>
         private void AddItem(){
+
+            Console.Clear();
 
             Console.WriteLine(ProductBusiness.GetAllProducts());
 
@@ -121,6 +134,9 @@ namespace Software_Project.Presentation{
 
         }
 
+        /// <summary>
+        /// Request to remove a product from the cart of the user.
+        /// </summary>
         private void RemoveItem(){
 
             Console.Clear();
@@ -137,19 +153,6 @@ namespace Software_Project.Presentation{
 
         }
 
-
-        private void GetPriceTotal(){
-
-            Console.Clear();
-
-            Console.WriteLine(new string('-', 41));
-            Console.WriteLine(new string(' ', 13) + "GET PRICE TOTAL");
-            Console.WriteLine(new string('-', 41) + '\n');
-
-            Console.WriteLine(CartBusiness.GetTotalPrice(UserBusiness.GetID(username)) + '\n');
-            Console.ReadKey();
-
-        }
 
     }
 

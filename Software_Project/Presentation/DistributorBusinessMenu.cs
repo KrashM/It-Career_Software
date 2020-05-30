@@ -9,6 +9,9 @@ namespace Software_Project.Presentation{
             Menu();
         }
 
+        /// <summary>
+        /// Finctionality of the menu.
+        /// </summary>
         private void Menu(){
 
             PrintMenu();
@@ -52,12 +55,15 @@ namespace Software_Project.Presentation{
                     break;
 
                 case 6:
-                    return;
+                    break;
 
             }
 
         }
 
+        /// <summary>
+        /// Prints the menu.
+        /// </summary>
         private void PrintMenu(){
 
             Console.WriteLine(new string('-', 40));
@@ -73,6 +79,9 @@ namespace Software_Project.Presentation{
 
         }
 
+        /// <summary>
+        /// Request a new distributor to be added.
+        /// </summary>
         private void CreateDistributor(){
 
             Console.Write("Name: ");
@@ -88,6 +97,9 @@ namespace Software_Project.Presentation{
 
         }
 
+        /// <summary>
+        /// Request the info of the distributor and prints it.
+        /// </summary>
         private void GetInfo(){
 
             string name;
@@ -118,6 +130,9 @@ namespace Software_Project.Presentation{
 
         }
 
+        /// <summary>
+        /// Requests a check for if a product exists and prints a message depending on the outcome.
+        /// </summary>
         private void CheckProduct(){
 
             string distributorName, productName;
@@ -151,6 +166,9 @@ namespace Software_Project.Presentation{
 
         }
 
+        /// <summary>
+        /// Request a new product to be added to the distributor.
+        /// </summary>
         private void CreateProduct(){
 
             string productName, distributorName;
@@ -208,6 +226,9 @@ namespace Software_Project.Presentation{
 
         }
 
+        /// <summary>
+        /// Requests a product to be removed from the distributor.
+        /// </summary>
         private void RemoveProduct(){
             
             string distributorName, productName;
